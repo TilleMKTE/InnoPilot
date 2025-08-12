@@ -20,8 +20,17 @@
       <form class="grid cols-2" action="results.html" method="GET">
         <div class="field">
           <label for="companyType">Choose the type of company</label>
-          <input id="companyType" name="companyType" placeholder="e.g. Dairy processing" />
+          <select id="companyType" name="companyType">
+            <option value="">Select company type</option>
+            <option value="Brewery">Brewery</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Bakery">Bakery</option>
+            <option value="Slaughterhouse">Slaughterhouse</option>
+            <option value="Food Production">Food Production</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
+
         <div class="field">
           <label for="location">Location of company</label>
           <input id="location" name="location" placeholder="City, Country" />
@@ -64,7 +73,6 @@
         </div>
       </form>
     </section>
-
   </div>
 </body>
 </html>
