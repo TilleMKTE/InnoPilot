@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenLab matchmaker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="logo.png" alt="Logo" class="logo">
+      <div>
+        <h1>Welcome to GreenLab matchmaker</h1>
+        <p class="lead">Insert your data to find out how well you match with the symbiosis</p>
+      </div>
+    </header>
+
+    <section class="card form-card">
+      <form class="grid cols-2" action="results.html" method="GET">
+        <div class="field">
+          <label for="companyType">Choose the type of company</label>
+          <input id="companyType" name="companyType" placeholder="e.g. Dairy processing" />
+        </div>
+        <div class="field">
+          <label for="location">Location of company</label>
+          <input id="location" name="location" placeholder="City, Country" />
+        </div>
+
+        <div>
+          <div class="section-title">Yearly energy demand (Input)</div>
+          <div class="field">
+            <label for="elecL">Electricity <span class="unit">kWh / year</span></label>
+            <input id="elecL" name="elecL" type="number" min="0" step="any" placeholder="0" />
+          </div>
+          <div class="field">
+            <label for="heatL">Heat <span class="unit">kWh / year</span></label>
+            <input id="heatL" name="heatL" type="number" min="0" step="any" placeholder="0" />
+          </div>
+          <div class="field">
+            <label for="gasL">Gas <span class="unit">m³ / year</span></label>
+            <input id="gasL" name="gasL" type="number" min="0" step="any" placeholder="0" />
+          </div>
+        </div>
+
+        <div>
+          <div class="section-title">Yearly byproduct (Output)</div>
+          <div class="field">
+            <label for="elecR">Electricity <span class="unit">kWh / year</span></label>
+            <input id="elecR" name="elecR" type="number" min="0" step="any" placeholder="0" />
+          </div>
+          <div class="field">
+            <label for="heatR">Heat <span class="unit">kWh / year</span></label>
+            <input id="heatR" name="heatR" type="number" min="0" step="any" placeholder="0" />
+          </div>
+          <div class="field">
+            <label for="gasR">Gas <span class="unit">m³ / year</span></label>
+            <input id="gasR" name="gasR" type="number" min="0" step="any" placeholder="0" />
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="cta" type="submit">Calculate</button>
+        </div>
+      </form>
+    </section>
+
+  </div>
+</body>
+</html>
