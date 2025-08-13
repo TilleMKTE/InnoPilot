@@ -22,12 +22,15 @@ header{display:flex; align-items:center; gap:16px; margin-bottom:8px;}
   background: none;
   border: 0;
 }
-
-.logo::after { 
-  content: none; 
-}
+.logo::after { content: none; }
 
 h1{font-size:40px; margin:0 0 6px;}
+.match-percent-inline {
+  font-size: 1.5em;
+  font-weight: 800;
+  color: var(--green);
+  margin-left: 8px;
+}
 p.lead{margin:0 0 24px; color:var(--muted);}
 .lead.small{font-size:14px;}
 .muted{color:var(--muted);}
@@ -47,13 +50,37 @@ input:focus, select:focus{outline:2px solid #c7f9cc; border-color:#86efac;}
 .cta:hover{background:var(--green-dark);}
 .results{margin-top:32px; padding:28px;}
 .results h2{font-size:28px; margin:0 0 8px;}
-.big-percent{font-size:64px; font-weight:800; margin:8px 0 20px;}
+
+/* bar styles */
 .bars{display:grid; gap:18px;}
 .bar-row{display:grid; grid-template-columns: 220px 1fr; gap:14px; align-items:center;}
 .bar-label{font-weight:700;}
-.bar{height:38px; border-radius:9px; background:#e9f5e9; position:relative; overflow:hidden;}
-.bar > span{position:absolute; inset:0 0 0 auto; width:0%; background:var(--green); display:block; transition:width .6s ease;}
-.bar > b{position:absolute; inset:0; display:flex; align-items:center; justify-content:flex-end; padding-right:10px; font-weight:800; color:#1f2937;}
+.bar{
+  height:38px;
+  border-radius:9px;
+  background:#e9f5e9;
+  position:relative;
+  overflow:hidden;
+}
+.bar > span{
+  position:absolute;
+  inset:0 auto 0 0;
+  width:0%;
+  background:var(--green);
+  display:block;
+  transition:width .6s ease;
+}
+.bar > b{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  padding-left:10px;
+  font-weight:800;
+  color:#1f2937;
+}
+
 .pill{background:#fde68a; padding:18px 22px; border-radius:22px; border:1px solid #facc15;}
 .pill strong{font-size:28px; text-decoration:underline;}
 .results-grid{display:grid; gap:28px; align-items:start;}
@@ -65,26 +92,23 @@ input:focus, select:focus{outline:2px solid #c7f9cc; border-color:#86efac;}
 .btn.linklike{background:transparent; color:var(--green-dark); border:1px solid var(--green-dark);}
 footer{margin:36px 0 0; text-align:center; color:var(--muted);}
 
-/* Savings row for button alignment */
 .savings-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
 }
-.savings-text {
-  flex: 1;
-  min-width: 0;
-}
-.savings-row .btn {
-  margin-top: 0;
-  white-space: nowrap;
+.savings-text { flex: 1; min-width: 0; }
+.savings-row .btn { margin-top: 0; white-space: nowrap; }
+
+/* justeret pill-position så den flugter med bjælker */
+@media (min-width: 980px){
+  .results-grid > div:last-child .pill{
+    margin-top: 0;
+  }
 }
 
-/* Placér knap nederst til højre i boksen */
-.card.results {
-  position: relative;
-}
+.card.results { position: relative; }
 .contact-inside-card {
   position: absolute;
   right: 32px;
@@ -102,6 +126,4 @@ footer{margin:36px 0 0; text-align:center; color:var(--muted);}
   transition: background 0.2s;
   z-index: 10;
 }
-.contact-inside-card:hover {
-  background: var(--green-dark);
-}
+.contact-inside-card:hover { background: var(--green-dark); }
